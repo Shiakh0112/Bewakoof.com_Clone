@@ -33,31 +33,27 @@ You can view the deployed project here: [bewakoof.com_clone](https://phenomenal-
 
 ### Homepage
 
-![Homepage](C:\p\bewakoof\Bewakoof_Clone\bewakoof.com_Clone\src\assets\image\Screenshot 2024-10-08 175544.png)
+![Homepage](https://raw.githubusercontent.com/Shiakh0112/Bewakoof.com_Clone/refs/heads/main/bewakoof.com_Clone/src/assets/image/Screenshot%202024-10-08%20175544.png)
 
 ### Multiproduct Page
 
-![Multiproduct Page](C:\p\bewakoof\Bewakoof_Clone\bewakoof.com_Clone\src\assets\image\Screenshot 2024-10-08 175544.png)
+![Multiproduct Page](https://raw.githubusercontent.com/Shiakh0112/Bewakoof.com_Clone/refs/heads/main/bewakoof.com_Clone/src/assets/image/Screenshot%202024-10-08%20175809.png)
 
 ### Single Product Page
 
-![Single Product Page](C:\p\bewakoof\Bewakoof_Clone\bewakoof.com_Clone\src\assets\image\Screenshot 2024-10-08 175952.png)
+![Single Product Page](https://raw.githubusercontent.com/Shiakh0112/Bewakoof.com_Clone/refs/heads/main/bewakoof.com_Clone/src/assets/image/Screenshot%202024-10-08%20175952.png)
 
 ### Cart Page
 
-![Cart Page]()
+![Cart Page](https://raw.githubusercontent.com/Shiakh0112/Bewakoof.com_Clone/refs/heads/main/bewakoof.com_Clone/src/assets/image/Screenshot%202024-10-08%20180056.png)
 
 ### Login Page
 
-![Login Page](C:\p\bewakoof\Bewakoof_Clone\bewakoof.com_Clone\src\assets\image\Screenshot 2024-10-08 175859.png)
-
-### cart Page
-
-![Cart](C:\p\bewakoof\Bewakoof_Clone\bewakoof.com_Clone\src\assets\image\Screenshot 2024-10-08 180056.png)
+![Login Page](https://raw.githubusercontent.com/Shiakh0112/Bewakoof.com_Clone/refs/heads/main/bewakoof.com_Clone/src/assets/image/Screenshot%202024-10-08%20175859.png)
 
 ### checkout Page
 
-![Cart](C:\p\bewakoof\Bewakoof_Clone\bewakoof.com_Clone\src\assets\image\Screenshot 2024-10-08 180126.png)
+![checkout](https://raw.githubusercontent.com/Shiakh0112/Bewakoof.com_Clone/refs/heads/main/bewakoof.com_Clone/src/assets/image/Screenshot%202024-10-08%20180126.png)
 
 ## Installation 🏗️
 
@@ -66,7 +62,6 @@ To get started with this project locally, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/Shiakh0112/Bewakoof.com_Clone.git
 
    ```
 
