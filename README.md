@@ -28,7 +28,7 @@ You can view the deployed project here: [bewakoof.com_clone](https://phenomenal-
 - **Multiproduct Page**: Displays a list of products with filtering options.
 - **Single Product Page**: Provides detailed information about each product.
 - **Cart Page**: Allows users to view and manage their selected items.
-- **Login and Signup**: Secure authentication with JWT and password hashing with bcrypt.
+- **Login and Signup**: "with the help of firebase "
 
 ## Images 🖼️
 
