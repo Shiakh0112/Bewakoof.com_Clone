@@ -62,14 +62,14 @@ To get started with this project locally, follow these steps:
 
 1. Clone the repository:
 
-   ```bash
+   ```bash Clone https://github.com/Shiakh0112/Bewakoof.com_Clone.git
 
    ```
 
 2. Navigate to the project directory:
 
      ```bash
-    cd bewakoof.com_Clone https://github.com/Shiakh0112/Bewakoof.com_Clone.git
+    cd bewakoof.com_Clone 
 
    ```
 
