@@ -1,3 +1,4 @@
+
 # bewakoof.com_clone 🧑
 
 ## About the ProjectAbout the Project
@@ -27,7 +28,7 @@ You can view the deployed project here: [bewakoof.com_clone](https://phenomenal-
 - **Multiproduct Page**: Displays a list of products with filtering options.
 - **Single Product Page**: Provides detailed information about each product.
 - **Cart Page**: Allows users to view and manage their selected items.
-- **Login and Signup**: Secure authentication with JWT and password hashing with bcrypt.
+- **Login and Signup**: "with the help of firebase "
 
 ## Images 🖼️
 
@@ -62,13 +63,12 @@ To get started with this project locally, follow these steps:
 1. Clone the repository:
 
    ```bash
-
-   ```
+   git clone https://github.com/Shiakh0112/Bewakoof.com_Clone.git
 
 2. Navigate to the project directory:
 
      ```bash
-    cd bewakoof.com_Clone https://github.com/Shiakh0112/Bewakoof.com_Clone.git
+    cd bewakoof.com_Clone 
 
    ```
 
