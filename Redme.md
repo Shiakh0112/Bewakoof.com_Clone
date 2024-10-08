@@ -67,8 +67,8 @@ To get started with this project locally, follow these steps:
 
 2. Navigate to the project directory:
 
-   ```bash
-    cd bewakoof.com_Clone
+     ```bash
+    cd bewakoof.com_Clone https://github.com/Shiakh0112/Bewakoof.com_Clone.git
 
    ```
 
