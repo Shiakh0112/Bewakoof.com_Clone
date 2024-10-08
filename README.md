@@ -72,7 +72,7 @@ To get started with this project locally, follow these steps:
 
    ```
 
-3. Install the dependencies for both frontend and backend:
+3. Install the dependencies 
 
    ```bash
 
