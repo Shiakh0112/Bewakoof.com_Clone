@@ -42,11 +42,16 @@ const CartPage = () => {
     return title; // Return the original title if it's three words or fewer
   };
   return (
-    <Box p={[2, 6]} maxW="100%" mx="auto" mt={[20, 28]}>
+    <Box
+      p={[6, 8]}
+      maxW={{ base: "100%", lg: "40%", md: "80%" }}
+      mx="auto"
+      mt={[20, 20]}
+    >
       {cartItems.length === 0 ? (
         <Flex
-          p={[2, 4]}
-          maxW="80%"
+          p={[6, 8]}
+          w="100%"
           mx="auto"
           mt={10}
           align="center"
@@ -54,15 +59,15 @@ const CartPage = () => {
           flexDir={["column", "row"]}
         >
           <Box
-            p={[2, 4]}
+            p={[8, 10]}
             borderRadius="lg"
             boxShadow="lg"
             display="flex"
             flexDir={["column", "row"]}
             alignItems="center"
             justifyContent="space-between"
-            w="80%"
-            maxW="300px"
+            w="100%"
+            maxW="500px"
             border="1px solid #e2e8f0"
             _hover={{
               boxShadow: "2xl",
@@ -109,23 +114,25 @@ const CartPage = () => {
       ) : (
         <>
           {/* Cart Items */}
-          <VStack spacing={[4, 8]} align="stretch" mt={4}>
+          <VStack spacing={[12, 8]} align="stretch" mt={4}>
             {cartItems.map((item) => (
               <HStack
                 key={item.id}
                 justify="space-between"
                 align="center"
-                p={4}
+                p={6}
                 boxShadow="lg"
                 borderRadius="md"
                 border="1px solid #e2e8f0"
                 flexDirection={["column", "row"]}
               >
-                <Image src={item.Display_image} boxSize={["70px", "100px"]} />
+                <Image src={item.Display_image} boxSize={["200px", "100px"]} />
                 <VStack
                   align="start"
                   spacing={1}
                   textAlign={["center", "left"]}
+                  flex="1"
+                  ml="6"
                 >
                   <Text fontSize={["12", "20"]} fontWeight="bold">
                     {truncateTitle(item.Title)}{" "}

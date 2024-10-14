@@ -59,7 +59,7 @@ function CatProduct() {
 
     if (sortBy) {
       filtered.sort((a, b) =>
-        sortBy === "low to high" ? a.price - b.price : b.price - a.price
+        sortBy === "low to high" ? b.price - a.price : a.price - b.price
       );
     }
 

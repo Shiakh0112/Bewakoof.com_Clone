@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
   Box,
+  VStack,
   Image,
   Flex,
   ListItem,
@@ -34,6 +35,8 @@ function Navbar() {
   const { isLogged, setIsLogged } = useContext(RouterContext);
   const { flag, user } = isLogged;
   let navigate = useNavigate();
+  const [hoveredItems, setHoveredItems] = useState(null);
+
   const cartCount = useSelector((state) => state.cart.cartCount);
   const handleSearchSubmit = (e) => {
     e.preventDefault();
@@ -94,6 +97,60 @@ function Navbar() {
       image: "https://example.com/mobile-covers-image.jpg",
     },
   };
+  const categories = [
+    {
+      title: "Topwear",
+      items: [
+        { name: "T-Shirts" },
+        { name: "Printed T-Shirts" },
+        { name: "Oversized T-shirts" },
+        { name: "Classic Fit T-shirts" },
+        // Add more items as needed
+      ],
+    },
+    {
+      title: "Bottomwear",
+      items: [
+        { name: "Joggers" },
+        { name: "Jeans" },
+        { name: "Baggy Jeans" },
+        // Add more items as needed
+      ],
+    },
+    {
+      title: "Winterwear",
+      items: [
+        { name: "Sweatshirts" },
+        { name: "Hoodies" },
+        { name: "Sweatshirts & Hoodies" },
+        // Add more items as needed
+      ],
+    },
+    {
+      title: "Top Sellers",
+      items: [
+        { name: "Top 150 T-Shirts" },
+        { name: "Top 20 Cargos" },
+        // Add more items as needed
+      ],
+    },
+  ];
+
+  const specials = [
+    {
+      name: "Early Winter Favorites",
+      image: "early-winter-favorites.png",
+    },
+    {
+      name: "Bewakoof Special Deadpool & Wolverine",
+      image: "deadpool-wolverine.png",
+    },
+    {
+      name: "Bewakoof Sneakers",
+      image: "bewakoof-sneakers.png",
+    },
+    // Add more specials as needed
+  ];
   return (
     <>
       <Box
@@ -337,35 +394,113 @@ function Navbar() {
                             top="100%"
                             left="0"
                             mt="8px"
-                            p="4"
+                            p="8"
                             bg="white"
                             border="1px solid #ccc"
                             boxShadow="lg"
-                            w="300px"
+                            w="900px"
+                            h="auto"
                             display="flex"
                             zIndex="10"
                           >
                             {/* Items List */}
-                            <Box flex="1">
-                              {megaMenuData[item].items.map((menuItem, idx) => (
-                                <Text
-                                  key={idx}
-                                  py="2"
-                                  px="4"
-                                  _hover={{ bg: "gray.100" }}
-                                >
-                                  {menuItem}
-                                </Text>
-                              ))}
-                            </Box>
+                            <Flex w="70%" justify="space-between">
+                              <VStack align="start" spacing={2}>
+                                <Text fontWeight="bold">Topwear</Text>
+                                <Link>T-Shirts</Link>
+                                <Link>Printed T-Shirts</Link>
+                                <Link>Oversized T-shirts</Link>
+                                <Link>Classic Fit T-shirts</Link>
+                                <Link>Plain T-Shirts</Link>
+                              </VStack>
 
-                            {/* Image */}
-                            <Box flex="1">
-                              <Image
-                                src={megaMenuData[item].image}
-                                alt={item}
-                              />
-                            </Box>
+                              <VStack align="start" spacing={2}>
+                                <Text fontWeight="bold">Bottomwear</Text>
+                                <Link>Joggers</Link>
+                                <Link>Jeans</Link>
+                                <Link>Baggy Jeans</Link>
+                                <Link>Pajamas</Link>
+                                <Link>Cargos</Link>
+                              </VStack>
+
+                              <VStack align="start" spacing={2}>
+                                <Text fontWeight="bold">Winterwear</Text>
+                                <Link>Sweatshirts</Link>
+                                <Link>Hoodies</Link>
+                                <Link>Jackets</Link>
+                                <Link>Sweaters</Link>
+                                <Link>Joggers</Link>
+                              </VStack>
+
+                              <VStack align="start" spacing={2}>
+                                <Text fontWeight="bold">Top Sellers</Text>
+                                <Link>Top 150 T-Shirts</Link>
+                                <Link>Top 20 Cargos</Link>
+                                <Link>Top 10 Jeans</Link>
+                                <Link>Top 50 Joggers</Link>
+                                <Link>Top 10 Shirts</Link>
+                              </VStack>
+                            </Flex>
+
+                            {/* Vertical Divider */}
+                            <Box
+                              width="1px"
+                              bg="gray.300"
+                              height="100%"
+                              mx="4"
+                            />
+
+                            {/* Specials Section */}
+                            <VStack w="30%" align="start" spacing={4}>
+                              <Text fontWeight="bold" color="gray.500">
+                                SPECIALS
+                              </Text>
+                              <Flex align="center">
+                                <Image
+                                  boxSize="25px"
+                                  src="early-winter-favorites-icon.png"
+                                  alt="Early Winter Favorites"
+                                />
+                                <Text ml={2}>Early Winter Favorites</Text>
+                              </Flex>
+                              <Flex align="center">
+                                <Image
+                                  boxSize="25px"
+                                  src="deadpool-wolverine-icon.png"
+                                  alt="Bewakoof Special Deadpool & Wolverine"
+                                />
+                                <Text ml={2}>
+                                  Bewakoof Special Deadpool & Wolverine
+                                </Text>
+                              </Flex>
+                              <Flex align="center">
+                                <Image
+                                  boxSize="25px"
+                                  src="bewakoof-sneakers-icon.png"
+                                  alt="Bewakoof Sneakers"
+                                />
+                                <Text ml={2}>Bewakoof Sneakers</Text>
+                              </Flex>
+                              <Flex align="center">
+                                <Image
+                                  boxSize="25px"
+                                  src="customize-google-ai-icon.png"
+                                  alt="Customize with Google AI"
+                                />
+                                <Text ml={2}>Customize with Google AI</Text>
+                              </Flex>
+                              <Flex align="center">
+                                <Image
+                                  boxSize="25px"
+                                  src="bewakoof-air-summer-drip-icon.png"
+                                  alt="Bewakoof Air: New Summer Drip"
+                                />
+                                <Text ml={2}>
+                                  Bewakoof Air: New Summer Drip
+                                </Text>
+                              </Flex>
+                              {/* Add more items as needed */}
+                            </VStack>
                           </Box>
                         )}
                       </ListItem>
