@@ -1,4 +1,4 @@
-import React, { useState, useRef, useContext } from "react";
+import React, { useRef } from "react";
 import {
   Box,
   Button,
@@ -11,33 +11,41 @@ import {
   Text,
   Divider,
   Image,
-  Spinner,
 } from "@chakra-ui/react";
-import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import { RouterContext } from "../../context/UserContext";
 
 const SignUp = () => {
-  let URL =
-    "https://food-order-2e6a8-default-rtdb.asia-southeast1.firebasedatabase.app/users.json";
   let navigate = useNavigate();
 
-  const { isLogged, setIsLogged } = useContext(RouterContext);
   let username = useRef(null);
   let userEmail = useRef(null);
   let userNumber = useRef(null);
+
   const HandleSigUp = (e) => {
     e.preventDefault();
-   let obj = {
-  username: username.current.value,
-  userNumber: userNumber.current.value,
-  userEmail: userEmail.current.value,
-};
 
-    axios.post(URL, obj).then((res) => {
-      alert("User account created successfully");
-      navigate("/login");
-    });
+    let obj = {
+      username: username.current.value,
+      userEmail: userEmail.current.value,
+      userNumber: userNumber.current.value,
+    };
+
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+
+    let isExist = users.find(
+      (user) => user.userNumber === obj.userNumber
+    );
+
+    if (isExist) {
+      alert("User already exists");
+      return;
+    }
+
+    users.push(obj);
+    localStorage.setItem("users", JSON.stringify(users));
+
+    alert("User account created successfully");
+    navigate("/login");
   };
 
   return (
@@ -65,7 +73,8 @@ const SignUp = () => {
             <Text fontSize="lg" color="gray.600">
               for Latest trends, exciting offers, and everything Bewakoof!
             </Text>
-            <FormControl id="name" isRequired>
+
+            <FormControl isRequired>
               <Input
                 ref={userEmail}
                 type="email"
@@ -75,7 +84,8 @@ const SignUp = () => {
                 py={6}
               />
             </FormControl>
-            <FormControl id="name" isRequired>
+
+            <FormControl isRequired>
               <Input
                 ref={username}
                 type="text"
@@ -86,32 +96,32 @@ const SignUp = () => {
               />
             </FormControl>
 
-            <FormControl id="number" isRequired>
+            <FormControl isRequired>
               <Input
                 ref={userNumber}
+                type="tel"
                 placeholder="Enter Mobile Number"
                 textAlign="center"
                 fontSize="lg"
                 py={6}
               />
             </FormControl>
-              <Button
-                
-                loadingText="Processing"
-                colorScheme="teal"
-                size="lg"
-                width="full"
-                type="submit"
-              >
-                Sign Up
-              </Button>
+
+            <Button
+              colorScheme="teal"
+              size="lg"
+              width="full"
+              type="submit"
+            >
+              Sign Up
+            </Button>
+
             <Flex align="center" width="full">
               <Divider />
               <Text px={2}>OR</Text>
               <Divider />
             </Flex>
 
-            {/* Log In Button */}
             <Box textAlign="center" mt={4}>
               <Text fontSize="md">
                 You have already account
@@ -121,70 +131,13 @@ const SignUp = () => {
               </Text>
             </Box>
 
-            <Button
-              variant="outline"
-              width="full"
-              fontSize="lg"
-              py={6}
-              leftIcon={
-                <Image
-                  src="https://images.bewakoof.com/web/carbon-email-1620039620.png"
-                  boxSize={6}
-                />
-              }
-            >
+            <Button variant="outline" width="full" fontSize="lg" py={6}>
               CONTINUE WITH EMAIL
             </Button>
 
-            <Flex gap={4}>
-              <Link href="YOUR_GOOGLE_AUTH_URL" width="full">
-                <Button
-                  width="full"
-                  variant="outline"
-                  leftIcon={
-                    <Image
-                      src="https://images.bewakoof.com/web/group-3-2x-1558356035.png"
-                      boxSize={6}
-                    />
-                  }
-                >
-                  GOOGLE
-                </Button>
-              </Link>
-              <Link href="YOUR_FACEBOOK_AUTH_URL" width="full">
-                <Button
-                  width="full"
-                  variant="outline"
-                  leftIcon={
-                    <Image
-                      src="https://images.bewakoof.com/web/bi-facebook2x-1620886445.png"
-                      boxSize={6}
-                    />
-                  }
-                >
-                  FACEBOOK
-                </Button>
-              </Link>
-            </Flex>
-
             <Text fontSize="sm" color="gray.500">
-              By creating an account or logging in, you agree with Bewakoof's{" "}
-              <Link
-                color="teal.500"
-                href="https://www.bewakoof.com/terms-and-conditions"
-                isExternal
-              >
-                Terms and Conditions
-              </Link>{" "}
-              and{" "}
-              <Link
-                color="teal.500"
-                href="https://www.bewakoof.com/privacy-policy-and-disclaimer"
-                isExternal
-              >
-                Privacy Policy
-              </Link>
-              .
+              By creating an account or logging in, you agree with Bewakoof's
+              Terms and Privacy Policy.
             </Text>
           </Stack>
         </form>
