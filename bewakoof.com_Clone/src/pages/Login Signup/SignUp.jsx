@@ -28,11 +28,12 @@ const SignUp = () => {
   let userNumber = useRef(null);
   const HandleSigUp = (e) => {
     e.preventDefault();
-    let obj = {
-      username: username.current.value,
-      userNumber: userNumber.current.value,
-      userEmail: userNumber.current.value,
-    };
+   let obj = {
+  username: username.current.value,
+  userNumber: userNumber.current.value,
+  userEmail: userEmail.current.value,
+};
+
     axios.post(URL, obj).then((res) => {
       alert("User account created successfully");
       navigate("/login");
